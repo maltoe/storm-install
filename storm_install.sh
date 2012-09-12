@@ -84,7 +84,7 @@ dataDir=$ZK_DATADIR
 clientPort=2181
 initLimit=5
 syncLimit=2
-server.1=$NIMUS:2888:3888
+server.1=$NIMBUS:2888:3888
 EOF
 
 	# This host's id.
@@ -197,13 +197,16 @@ storm() {
 	pp "Configuring Storm..."
 	echo "storm.local.dir: \""$STORM_DATADIR"\"" > $STORM_CONF
 	echo "storm.zookeeper.servers:" >> $STORM_CONF
-	for ((i=0;i<${#NODES[@]};i++))
-	do
-		echo " - \""${NODES[$i]}"\"" >> $STORM_CONF
-	done
+	echo " - \""$NIMBUS"\"" >> $STORM_CONF
+#	for ((i=0;i<${#NODES[@]};i++))
+#	do
+#		echo " - \""${NODES[$i]}"\"" >> $STORM_CONF
+#	done
 	if [ "$HOST" != "$NIMBUS" ]
 	then
 		echo "nimbus.host: \""$NIMBUS"\"" >> $STORM_CONF
+	else
+
 	fi
 
 	# Supervisor directories/scripts + global start/stop scripts.
