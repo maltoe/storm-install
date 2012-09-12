@@ -8,11 +8,10 @@ pp() {
 # Configuration.
 #########################################
 
-# Cluster information.
+# Private information.
 source storm_install.conf
 
 # Base config.
-BASEDIR=$HOME"/epn"
 START_SH=$BASEDIR"/start.sh"
 STOP_SH=$BASEDIR"/stop.sh"
 HOST=`hostname`
@@ -198,10 +197,6 @@ storm() {
 	echo "storm.local.dir: \""$STORM_DATADIR"\"" > $STORM_CONF
 	echo "storm.zookeeper.servers:" >> $STORM_CONF
 	echo " - \""$NIMBUS"\"" >> $STORM_CONF
-#	for ((i=0;i<${#NODES[@]};i++))
-#	do
-#		echo " - \""${NODES[$i]}"\"" >> $STORM_CONF
-#	done
 	if [ "$HOST" != "$NIMBUS" ]
 	then
 		echo "nimbus.host: \""$NIMBUS"\"" >> $STORM_CONF

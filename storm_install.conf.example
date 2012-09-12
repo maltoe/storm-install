@@ -1,2 +1,2 @@
-NODES=("host_a" "host_b" "ipaddress_c")
-NIMBUS="host_d"
+NIMBUS="hostname_or_ipaddess"
+BASEDIR=$HOME"/storm"
