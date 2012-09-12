@@ -205,8 +205,6 @@ storm() {
 	if [ "$HOST" != "$NIMBUS" ]
 	then
 		echo "nimbus.host: \""$NIMBUS"\"" >> $STORM_CONF
-	else
-
 	fi
 
 	# Supervisor directories/scripts + global start/stop scripts.
