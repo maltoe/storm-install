@@ -1,0 +1,2 @@
+NODES=("host_a" "host_b" "ipaddress_c")
+NIMBUS="host_a"
