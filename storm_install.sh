@@ -186,12 +186,12 @@ storm() {
 	STORM_RUN=$STORM_DIR"/run"
 
 	pp "Installing Storm "$STORM_VERSION"..."
-	mkdir $STORM_DIR
-	mkdir $STORM_DATADIR
+	mkdir $STORM_DIR >/dev/null
+	mkdir $STORM_DATADIR >/dev/null
 
 	pp "Downloading Storm..."
 	wget $STORM_ZIP_URL -q -O $STORM_ZIP
-	unzip $STORM_ZIP -qq -d $STORM_DIR
+	unzip -qq $STORM_ZIP -d $STORM_DIR
 	rm $STORM_ZIP
 
 	pp "Configuring Storm..."
