@@ -152,7 +152,7 @@ zeromq() {
 jzmq() {
 	JZMQ_DIR=$BASEDIR"/jzmq"
 	JZMQ_REPO="https://github.com/zeromq/jzmq.git"
-	JZMQ_COMMIT="HEAD"
+	JZMQ_COMMIT="e2dd66"
 
 	pp "Installing JZMQ (Java bindings for ZeroMQ) from Github..."
 
