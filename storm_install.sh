@@ -4,14 +4,6 @@ pp() {
 	echo -e "\e[00;32m"$1"\e[00m"
 }
 
-#########################################
-# Configuration.
-#########################################
-
-# Base config.
-BASEDIR=$HOME"/epn"
-START_SH=$BASEDIR"/start.sh"
-STOP_SH=$BASEDIR"/stop.sh"
 HOST=`hostname`
 
 #########################################
@@ -241,9 +233,14 @@ execute() {
 	esac
 }
 
-if [ $# -eq 2 ]
+if [ $# -eq 3 ]
 then
+
 	NIMBUS=$2
+	BASEDIR=$3
+	START_SH=$BASEDIR"/start.sh"
+	STOP_SH=$BASEDIR"/stop.sh"
+
 	if [ "$1" = "all" ]
 	then
 		# Run everything.
@@ -263,7 +260,7 @@ then
 		pp "Phase installation complete."
 	fi
 else
-	echo "Usage: ./install_storm <number_of_phase>/all <nimbus>"
+	echo "Usage: ./install_storm <number_of_phase>/all <nimbus> <installdir>"
 	echo "Phases:"
 	for ((i=0;i<${#PHASES[@]};i++))
 	do
