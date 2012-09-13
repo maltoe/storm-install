@@ -37,7 +37,7 @@ cleanup() {
 deps() {
 	pp "Checking system dependencies..."
 	echo
-	sudo apt-get install screen daemontools uuid-dev git libtool
+	sudo apt-get install screen daemontools uuid-dev git libtool build-essential openjdk-6-jdk unzip
 	echo
 }
 
