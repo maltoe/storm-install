@@ -8,10 +8,8 @@ pp() {
 # Configuration.
 #########################################
 
-# Private information.
-source storm_install.conf
-
 # Base config.
+BASEDIR=$HOME"/epn"
 START_SH=$BASEDIR"/start.sh"
 STOP_SH=$BASEDIR"/stop.sh"
 HOST=`hostname`
@@ -243,8 +241,9 @@ execute() {
 	esac
 }
 
-if [ $# -eq 1 ]
+if [ $# -eq 2 ]
 then
+	NIMBUS=$2
 	if [ "$1" = "all" ]
 	then
 		# Run everything.
@@ -264,7 +263,7 @@ then
 		pp "Phase installation complete."
 	fi
 else
-	echo "Usage: ./install_storm [number_of_phase] or ./install_storm all"
+	echo "Usage: ./install_storm <number_of_phase>/all <nimbus>"
 	echo "Phases:"
 	for ((i=0;i<${#PHASES[@]};i++))
 	do
