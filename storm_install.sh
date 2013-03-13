@@ -165,9 +165,9 @@ jzmq() {
 #########################################
 
 storm() {
-	STORM_VERSION="0.8.1"
+	STORM_VERSION="0.8.2"
 	STORM_DIR=$BASEDIR"/storm"
-	STORM_ZIP_URL="https://github.com/downloads/nathanmarz/storm/storm-"$STORM_VERSION".zip"
+	STORM_ZIP_URL="https://dl.dropbox.com/u/133901206/storm-"$STORM_VERSION".zip"
 	STORM_ZIP=$STORM_DIR"/storm.zip"
 	STORM_INSTALLDIR=$STORM_DIR"/storm-"$STORM_VERSION
 	STORM_DATADIR=$STORM_DIR"/data"
